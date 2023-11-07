@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+<div id="content-start">
+
+<h1>Webtraining Sales Prospecting Myrspoven Solution</h1>
+
+<br>
+<h2>How to choose the perfect customer and the perfect buildings</h2>
+<hr>
+<h3>Which customer to address</h3>
+<br> 
+<p> Customers with large share of their portfolio with same technical preconditions - this makes it easier to scale</p>
+<br> 
+<p> Long term digitalisation and sustainability focus - these customers are ready and motivated to receive optimisation solutions</p>
+<br> 
+<p> Internal innovation champion - There are usually many internal stakeholders, an internal champion will help you reach and convince them</p>
+<br> 
+<p> Customers with portfolio of  big buildings - Big buildings have more technical systems and will usually achieve greater optimisation results</p>
+<br> 
+<p> It is usually easier to address customers with new innovative solutions where you have good existing relationships</p>
+<br>
+
+
+<br>
+<h2>Which buildings to choose</h2>
+<hr> 
+<h2>Which attributes to look for</h2>
+<br> 
+<p>Varied use of the building  (day vs night for example) - this means we can shift loads and therefore save more </p>
+<br> 
+<p>myCoreAI achieves the best result in buildings with several technical systems, both regarding air handling units and heating circuits, since it has the opportunity to optimize on more individual set-points.</p>
+<br> 
+<p> As a natural consequence of the fact that buildings with several technical systems are better, buildings that are slightly larger regarding heated/cooled areas are also good, as they often have more installed units.</p>
+<br> 
+<p> Properties that are among the least energy efficient in a portfolio are better to start with. The savings in a building that consumes a lot of energy will naturally be greater, to the benefit of the property owner.</p>
+<br> 
+<p> Older buildings are generally better than brand new ones- one reason being that  you have no baseline to optimize against in terms of evaluation of the solution  in a new building. New buildings are generally more energy efficient from the start as well.</p>
+<br> 
+<p>Connected energy meters (main meters) to the BMS is good, but also not a requirement as the energy use can often be obtained directly from energy companies via a third-party service.</p>
+<br> 
+<p>This is more of a bonus than necessary, but if the building has existing sensors for temperature (and where applicable CO2) we can probably use them. Otherwise, needed additional sensors are installed (either supplementary sensors or a full set), where Myrspoven uses partners. </p>
+<br> 
+
+<h2>Generally good buildings (tier 1)</h2>
+<p>Offices</p>
+<p>Shopping malls</p>
+<p>Airports</p>
+<p>Universities</p>
+<p>This because of
+their (vast) size
+their varied use (day vs night) - this means we can shift loads and therefore save more
+their large number of technical systems which usually means greater savings</p>
+<br> 
+<br> 
+<h2>Semi-good buildings (tier 2)</h2>
+<p>Hotels</p>
+<p>Schools</p>
+<p>Elderly care</p>
+<p>Council buildings such as courthouses, and libraries etc</p>
+<p>Big Residential buildings</p>
+
+<p>These buildings are not as good as tier 1 buildings, but have proven to achieve good savings because of, for example, their varied use and size.</p> 
+<br> 
+<p> Other buildings, like train stations, hospitals and logistics facilities, might also be good buildings but need further investigation, like a technical inventory, before proceeding.</p> 
+<br> 
+What to avoid
+<br> 
+<p> In order for Myrspoven's myCoreAI to make the greatest impact and provide the greatest savings, it may be good to avoid buildings with an excessively large proportion of VAV (variable air volume), which are often already well optimized.</p> 
+<p> Portfolios with small individual buildings  </p> 
+<p> Unusual indoor comfort buildings like, ice rink, swimming pools, factories and other buildings with specific requirements for indoor climate  </p> 
+<p> Customers with unusually hard requirements for IT-security like military facilities  </p> 
+
+
+<h3> Summary</h3> 
+<br> 
+<p> Go for big buildings with high number of technical systems and buildings using different types of energy types like, heating, cooling and electricity.
+Avoid ice rinks and swimming pools, aim for the big office buildings to be sure of good savings.  </p> 
+<br> 
+    <button onclick="showTestPage()">Start the Test</button>
+</div>
+
+<div id="content-testpage" style="display:none;">
+    <h1>Quiz</h1>
+    <br>
+    <p>This test consists of x questions based on the text you have previously read.</p>
+    <p>Please answer all the questions.</p>
+
+    <div id="questions" style="display:none;">
+        
+        <form action="PprocessPage.php" method="post">
+            <output type="radio" name="Fråga" value="Fråga1"> Which customers are considered the best type of customers for Myrspoven’s solutions? (tick all that apply)
+                <br>
+            <br>
+            <input type="checkbox" name="alternativ" value="Hund"> A retailer with 200 shops, average sqm 4000 sqm<br>
+            <input type="checkbox" name="alternativ" value="Katt"> A retailer with 4 shopping malls, average 50000 sqm<br>
+            <input type="checkbox" name="alternativ" value="Fisk"> A real estate owner focusing on offices average 20000 sqm<br>
+            <input type="checkbox" name="alternativ" value="Fågel"> A real estate owner focusing on residential average 10000 sqm<br>
+            <br>
+            <input type="submit" value="Send">
+        </form>
+    </div>
+</div>
+
+<script>
+    function showTestPage() {
+        var contentStartDiv = document.getElementById('content-start');
+        contentStartDiv.style.display = 'none'; // Göm startinnehållet
+
+        var contentTestPageDiv = document.getElementById('content-testpage');
+        contentTestPageDiv.style.display = 'block'; // Visa testinnehållet
+    
+        var questionsForm = document.getElementById('questions');
+        questionsForm.style.display = 'block';
+
+    }
+</script>
+</body>
+</html>

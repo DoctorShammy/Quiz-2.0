@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +6,6 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Lägg till Bootswatch Tema -->
     <link href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/spacelab/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
 
@@ -20,7 +19,7 @@
 
     <div id="questions" >
         
-        <form action="PprocessPage.php" method="post">
+        <form action="ProcessPage.php" method="post">
             <output type="radio" name="Fråga" value="Fråga1"> Which customers are considered the best type of customers for Myrspoven’s solutions? (tick all that apply)
                 <br>
             <br>
@@ -36,8 +35,95 @@
             <input type="checkbox" name="alternativ" value="Fågel"> A real estate owner focusing on residential average 10000 sqm<br>
             <br>
             <button type="submit" class="btn btn-primary">Submit</button>
-            <!-- <input type="submit" value="Send"> -->
+       
         </form>
     </div>
 </div>
+</body> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Form Example</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/spacelab/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>Quiz</h1>
+    <form action="processQuiz.php" method="post">
+      <div class="mb-3">
+        <p>This test consists of 7 standard questions and 7 questions designed for Schneider Electric, 
+            all of which are based on the text you have previously read. Please answer all the questions.</p>
+      </div>
+      <div class="mb-3">
+        <label for="question1" class="form-label">
+        <h6>1. Which customers are considered the best type of customers for Myrspoven’s solutions? (tick all that apply)
+        </label>
+        </h6>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="option1" id="option1">
+          <label class="form-check-label" for="option1">
+            A retailer with 200 shops, average sqm 4000 sqm
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="option2" id="option2">
+          <label class="form-check-label" for="option2">
+            A retailer with 4 shopping malls, average 50000 sqm
+          </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="option3" id="option3">
+            <label class="form-check-label" for="option3">
+                A real estate owner focusing on offices average 20000 sqm
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="option4" id="option4">
+            <label class="form-check-label" for="option4">
+                A real estate owner focusing on residential average 10000 sqm
+            </label>
+          </div>
+        <br>
+        <div class="mb-3">
+            <label for="question2" class="form-label">
+            <h6>2. What should you look for in a customer? (tick all that apply)
+            </label>
+            </h6>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="option1" id="option1">
+              <label class="form-check-label" for="option1">
+                Big portfolio with small average size of buildings              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="option2" id="option2">
+              <label class="form-check-label" for="option2">
+                Big average size of buildings in a portfolio
+            </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="option3" id="option3">
+                <label class="form-check-label" for="option3">
+                    Customers who are just starting their digitization journey
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="option4" id="option4">
+                <label class="form-check-label" for="option4">
+                    Customers with clear sustainability goals
+                </label>
+              </div>
+
+
+      </div>
+      <button type="button" class="btn btn-primary btn-sm">Submit Answers</button>
+
+    </form>
+  </div>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </body>
+</html>

@@ -1,129 +1,124 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/spacelab/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css">
-
-</head>
-<body>
-    <div id="content-testpage" >
-    <h1>Quiz</h1>
-    <br>
-    <p>This test consists of x questions based on the text you have previously read.</p>
-    <p>Please answer all the questions.</p>
-
-    <div id="questions" >
-        
-        <form action="ProcessPage.php" method="post">
-            <output type="radio" name="Fråga" value="Fråga1"> Which customers are considered the best type of customers for Myrspoven’s solutions? (tick all that apply)
-                <br>
-            <br>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="option1" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                    Default checkbox
-                </label>
-            </div>            
-            <input type="checkbox" name="alternativ" value="Hund"> A retailer with 200 shops, average sqm 4000 sqm<br>
-            <input type="checkbox" name="alternativ" value="Katt"> A retailer with 4 shopping malls, average 50000 sqm<br>
-            <input type="checkbox" name="alternativ" value="Fisk"> A real estate owner focusing on offices average 20000 sqm<br>
-            <input type="checkbox" name="alternativ" value="Fågel"> A real estate owner focusing on residential average 10000 sqm<br>
-            <br>
-            <button type="submit" class="btn btn-primary">Submit</button>
-       
-        </form>
-    </div>
-</div>
-</body> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz Form Example</title>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/spacelab/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/spacelab/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
   <div class="container mt-5">
     <h1>Quiz</h1>
-    <form action="processQuiz.php" method="post">
+    <form id="quizForm">
+      <br>
       <div class="mb-3">
-        <p>This test consists of 7 standard questions and 7 questions designed for Schneider Electric, 
-            all of which are based on the text you have previously read. Please answer all the questions.</p>
+        <h5>This test consists of 7 standard questions and 7 questions designed for Schneider Electric, 
+            all of which are based on the text you have previously read. 
+            <br>
+            <br>
+            Please answer all the questions.</h5>
       </div>
+                    <!-- -----------Fårga 1-------------- -->
       <div class="mb-3">
         <label for="question1" class="form-label">
         <h6>1. Which customers are considered the best type of customers for Myrspoven’s solutions? (tick all that apply)
         </label>
         </h6>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="option1" id="option1">
-          <label class="form-check-label" for="option1">
+          <input class="form-check-input" type="checkbox" name="question1" id="option1a">
+          <label class="form-check-label" for="option1a">
             A retailer with 200 shops, average sqm 4000 sqm
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="option2" id="option2">
-          <label class="form-check-label" for="option2">
+          <input class="form-check-input" type="checkbox" name="question1" id="option1b">
+          <label class="form-check-label" for="option1b">
             A retailer with 4 shopping malls, average 50000 sqm
           </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="option3" id="option3">
-            <label class="form-check-label" for="option3">
+            <input class="form-check-input" type="checkbox" name="question1" id="option1c">
+            <label class="form-check-label" for="option1c">
                 A real estate owner focusing on offices average 20000 sqm
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="option4" id="option4">
-            <label class="form-check-label" for="option4">
+            <input class="form-check-input" type="checkbox" name="question1" id="option1d">
+            <label class="form-check-label" for="option1d">
                 A real estate owner focusing on residential average 10000 sqm
             </label>
           </div>
-        <br>
+                    <!-- -----------Fårga 2-------------- -->
+        <br> 
         <div class="mb-3">
             <label for="question2" class="form-label">
             <h6>2. What should you look for in a customer? (tick all that apply)
             </label>
             </h6>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="option1" id="option1">
-              <label class="form-check-label" for="option1">
-                Big portfolio with small average size of buildings              </label>
+              <input class="form-check-input" type="checkbox" name="question2" id="option2a">
+              <label class="form-check-label" for="option2a">
+                Big portfolio with small average size of buildings              
+              </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="option2" id="option2">
-              <label class="form-check-label" for="option2">
+              <input class="form-check-input" type="checkbox" name="question2" id="option2b">
+              <label class="form-check-label" for="option2b">
                 Big average size of buildings in a portfolio
             </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="option3" id="option3">
-                <label class="form-check-label" for="option3">
+                <input class="form-check-input" type="checkbox" name="question2" id="option2c">
+                <label class="form-check-label" for="option2c">
                     Customers who are just starting their digitization journey
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="option4" id="option4">
-                <label class="form-check-label" for="option4">
+                <input class="form-check-input" type="checkbox" name="question2" id="option2d">
+                <label class="form-check-label" for="option2d">
                     Customers with clear sustainability goals
                 </label>
               </div>
 
 
-      </div>
-      <button type="button" class="btn btn-primary btn-sm">Submit Answers</button>
-
+      <button type="button" id="submitAnswers" class="btn btn-primary btn-sm">Submit Answers</button>
     </form>
+    <div id="result"></div>
   </div>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    const correctAnswers = {
+      'question1': ['option1b', 'option1c'], 
+      'question2': ['option2b', 'option2d']  
+    };
+
+    document.getElementById('submitAnswers').addEventListener('click', function() {
+      let score = 0;
+      
+     // Check answers for question 1
+  const question1Options = document.querySelectorAll(`input[name="question1"]:checked`);
+  question1Options.forEach(option => {
+    if (correctAnswers['question1'].includes(option.id)) {
+      score++; // Increment score for each correct answer
+    }
+  });
+
+  // Check answers for question 2
+  const question2Options = document.querySelectorAll(`input[name="question2"]:checked`);
+  question2Options.forEach(option => {
+    if (correctAnswers['question2'].includes(option.id)) {
+      score++; // Increment score for each correct answer
+    }
+  });
+
+  const totalCorrectAnswers = correctAnswers['question1'].length + correctAnswers['question2'].length;
+
+      // Show the result
+      const resultDiv = document.getElementById('result');
+      resultDiv.textContent = `Your score is ${score}/${totalCorrectAnswers}.`;
+    });
+  </script>
 </body>
-</html>

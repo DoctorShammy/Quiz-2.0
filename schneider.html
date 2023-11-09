@@ -3,56 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz Form</title>
+  <title>Schneider Quiz Form</title>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/spacelab/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  <div class="container mt-5">
-    <h1>Quiz</h1>
-    <form id="quizForm">
-      <br>
-      <div class="mb-3">
-        <h5>This test consists of 7 standard questions and 7 questions designed for Schneider Electric, 
-            all of which are based on the text you have previously read. 
-            <br>
-            <br>
-            Please answer all the questions.</h5>
-      </div>
-                    <!-- -----------Fårga 1-------------- -->
-      <div class="mb-3">
-        <label for="question1" class="form-label">
-        <h6>1. Which customers are considered the best type of customers for Myrspoven’s solutions? (tick two answers)
-        </label>
-        </h6>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="question1" id="option1a">
-          <label class="form-check-label" for="option1a">
-            A retailer with 200 shops, average sqm 4000 sqm
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="question1" id="option1b">
-          <label class="form-check-label" for="option1b">
-            A retailer with 4 shopping malls, average 50000 sqm
-          </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="question1" id="option1c">
-            <label class="form-check-label" for="option1c">
-                A real estate owner focusing on offices average 20000 sqm
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="question1" id="option1d">
-            <label class="form-check-label" for="option1d">
-                A real estate owner focusing on residential average 10000 sqm
-            </label>
-          </div>
-                    <!-- -----------Fårga 2-------------- -->
-        <br> 
+    <div class="container mt-5">
+    <h1>Quiz for Schneider Electric</h1>
+                <br>
+                <br>
+
+              <!-- -----------Fårga 1-------------- -->
+              <br> 
+              <div class="mb-3">
+              <label for="question7" class="form-label">
+              <h6>1. Which customers are considered the best type of customers for Myrspoven’s solutions? 
+              </label>
+              </h6>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="question1" id="option1a">
+                <label class="form-check-label" for="option1a">
+                  A retailer with 200 shops, average sqm 4000 sqm
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="question1" id="option1b">
+                <label class="form-check-label" for="option1b">
+                  A retailer with 4 shopping malls, average 50000 sqm
+                </label>
+              </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="question1" id="option1c">
+                  <label class="form-check-label" for="option1c">
+                    A real estate owner focusing on residential average 10000 sqm
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="question1" id="option1d">
+                  <label class="form-check-label" for="option1d">
+                    All of the above
+                  </label>
+                </div>
+              <!-- -----------Fårga 2-------------- -->
+              <br> 
         <div class="mb-3">
             <label for="question2" class="form-label">
             <h6>2. What should you look for in a customer? (tick two answers)
@@ -61,64 +56,59 @@
             <div class="form-check">
               <input class="form-check-input" type="checkbox" name="question2" id="option2a">
               <label class="form-check-label" for="option2a">
-                Big portfolio with small average size of buildings              
-              </label>
+                Big average size of buildings in a portfolio
+               </label>
             </div>
             <div class="form-check">
               <input class="form-check-input" type="checkbox" name="question2" id="option2b">
               <label class="form-check-label" for="option2b">
-                Big average size of buildings in a portfolio
+                Customers who are well into  their digitization journey
+
             </label>
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="question2" id="option2c">
                 <label class="form-check-label" for="option2c">
-                    Customers who are just starting their digitization journey
+                  Customers with clear sustainability goals
                 </label>
               </div>
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="question2" id="option2d">
                 <label class="form-check-label" for="option2d">
-                    Customers with clear sustainability goals
+                  All of the above
                 </label>
               </div>
-
               <!-- -----------Fårga 3-------------- -->
-            <br> 
+              <br> 
             <div class="mb-3">
             <label for="question3" class="form-label">
-            <h6>3. What attributes are important when choosing what building to optimize? (tick two answers)
-            </label>
+            <h6>3. What attributes are important when choosing what building to optimize?
             </h6>
             <div class="form-check">
               <input class="form-check-input" type="checkbox" name="question3" id="option3a">
               <label class="form-check-label" for="option3a">
-                High number of technical systems              
+                Buildings with low number of technical systems
               </label>
             </div>
             <div class="form-check">
               <input class="form-check-input" type="checkbox" name="question3" id="option3b">
               <label class="form-check-label" for="option3b">
-                Buildings with low number of technical systems
+                Buildings with an excessively large proportion of VAV (variable air volume)
+
               </label>
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="question3" id="option3c">
                 <label class="form-check-label" for="option3c">
-                  Buildings with an excessively large proportion of VAV (variable air volume)
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="question3" id="option3d">
-                <label class="form-check-label" for="option3d">
                   Buildings with varied use
                 </label>
               </div>
+              
               <!-- -----------Fårga 4-------------- -->
               <br> 
               <div class="mb-3">
               <label for="question4" class="form-label">
-              <h6>4. Which buildings are the optimal to optimize (tier 1)? (tick three answers)
+              <h6>4. Which buildings are the optimal to optimize (tier 1)? 
               </label>
               </h6>
               <div class="form-check">
@@ -130,133 +120,116 @@
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="question4" id="option4b">
                 <label class="form-check-label" for="option4b">
-                  Shops
+                  Airports
                 </label>
               </div>
               <div class="form-check">
                   <input class="form-check-input" type="checkbox" name="question4" id="option4c">
                   <label class="form-check-label" for="option4c">
-                    Airports
+                    Shopping Malls
                   </label>
                 </div>
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" name="question4" id="option4d">
                   <label class="form-check-label" for="option4d">
-                    Shopping Malls
+                    All of the above
                   </label>
                 </div>
               <!-- -----------Fårga 5-------------- -->
               <br> 
               <div class="mb-3">
               <label for="question5" class="form-label">
-              <h6>5. Which buildings need more investigation before proceeding? (tick three answers)
+              <h6>5. You need more investigation before proceeding with a train station
               </label>
               </h6>
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="question5" id="option5a">
                 <label class="form-check-label" for="option5a">
-                  Shopping Malls
+                  True
                  </label>
               </div>
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="question5" id="option5b">
                 <label class="form-check-label" for="option5b">
-                  Train Stations
+                  False
                 </label>
               </div>
-              <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="question5" id="option5c">
-                  <label class="form-check-label" for="option5c">
-                    Logistics facilities
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="question5" id="option5d">
-                  <label class="form-check-label" for="option5d">
-                   Hospitals
-                  </label>
-                </div>
+          
               <!-- -----------Fårga 6-------------- -->
               <br> 
               <div class="mb-3">
               <label for="question6" class="form-label">
-              <h6>6. Which type of building should you avoid? (tick three answers)
+              <h6>6. You need more investigation before proceeding with an office building
+
+
               </label>
               </h6>
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="question6" id="option6a">
                 <label class="form-check-label" for="option6a">
-                  Elderly care facilities
+                 True
                  </label>
               </div>
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="question6" id="option6b">
                 <label class="form-check-label" for="option6b">
-                  Schools
+                  False
                 </label>
               </div>
-              <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="question6" id="option6c">
-                  <label class="form-check-label" for="option6c">
-                    Ice rinks
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="question6" id="option6d">
-                  <label class="form-check-label" for="option6d">
-                    Swimming pools
-                  </label>
-                </div>
+              
               <!-- -----------Fårga 7-------------- -->
+
               <br> 
               <div class="mb-3">
               <label for="question7" class="form-label">
-              <h6>7. What attributes should you avoid? (tick atleast two answers)
+              <h6>7. Which type of building should you avoid?
               </label>
               </h6>
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="question7" id="option7a">
                 <label class="form-check-label" for="option7a">
-                  Building with specific requirements on the indoor climate, like ice rinks or swimming pools
+                  Military facilities
+
                 </label>
               </div>
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="question7" id="option7b">
                 <label class="form-check-label" for="option7b">
-                  Buildings with an excessively large proportion of VAV (variable air volume)
+                  Ice rinks
+
                 </label>
               </div>
               <div class="form-check">
                   <input class="form-check-input" type="checkbox" name="question7" id="option7c">
                   <label class="form-check-label" for="option7c">
-                    Small individual buildings in a portfolio
+                    Swimming pools
+
                   </label>
                 </div>
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" name="question7" id="option7d">
                   <label class="form-check-label" for="option7d">
-                    Military facilities
+                    All of the above
                   </label>
                 </div>
 
                 <br>
                 <br>
-                
 
       <button type="button" id="submitAnswers" class="btn btn-primary btn-sm">Submit Answers</button>
     </form>
     <div id="result"></div>
   </div>
-
-<script>
+</div>
+  <script>
     const correctAnswers = {
-      'question1': ['option1b', 'option1c'], 
-      'question2': ['option2b', 'option2d'],
-      'question3': ['option3a', 'option3d'],
-      'question4': ['option4a', 'option4c','option4d'],
-      'question5': ['option5b', 'option5c','option5d'],
-      'question6': ['option6c', 'option6d'],
-      'question7': ['option7a', 'option7b', 'option7c', 'option7d']     
+      'question1': ['option1b'], 
+      'question2': ['option2d'],
+      'question3': ['option3c'],
+      'question4': ['option4d'],
+      'question5': ['option5a',],
+      'question6': ['option6b'],
+      'question7': ['option7d']     
     };
     const maxChoices = {
     'question1': 2, 
@@ -364,6 +337,5 @@ function limitChoices(questionId) {
       resultDiv.textContent = `Your score is ${score}/${totalCorrectAnswers}.`;
     });
 
-
-  </script>
+</script>
 </body>

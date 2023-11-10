@@ -1,15 +1,28 @@
 
 #content-start {
-    max-width: 800px; /* This sets the maximum width of the content area */
-    margin: auto; /* This centers the content block horizontally */
-    padding: 40px; /* This adds space inside the borders of the content area */
-    text-align: left; /* For book-like alignment, text should be left-aligned */
-    background: #fff; /* If you want a specific background color */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: Adds a subtle shadow to mimic a page */
-    line-height: 1.6; /* Adjust line height for readability */
-    font-family: Georgia, 'Times New Roman', Times, serif; /* Optional: A more book-like font */
-    color: #333; /* Optional: Darker text for better readability */
-    border-radius: 4px; /* Optional: Rounds the corners of the content area */
+    max-width: 800px; 
+    margin: auto; 
+    padding: 40px; 
+    text-align: left; 
+    background: #fff; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+    line-height: 1.6; 
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+    color: #333; 
+    border-radius: 4px;
+}
+
+.video{
+    max-width: 800px; 
+    margin: auto; 
+    padding: 40px; 
+    text-align: left; 
+    background: #fff; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+    line-height: 1.6;
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+    color: #333; 
+    border-radius: 4px; 
 }
 
 

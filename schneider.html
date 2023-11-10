@@ -18,7 +18,7 @@
               <!-- -----------Fårga 1-------------- -->
               <br> 
               <div class="mb-3">
-              <label for="question7" class="form-label">
+              <label for="question7" id="question1" class="form-label">
               <h6>1. Which customers are considered the best type of customers for Myrspoven’s solutions? 
               </label>
               </h6>
@@ -49,8 +49,8 @@
               <!-- -----------Fårga 2-------------- -->
               <br> 
         <div class="mb-3">
-            <label for="question2" class="form-label">
-            <h6>2. What should you look for in a customer? (tick two answers)
+            <label for="question2" id="question2" class="form-label">
+            <h6>2. What should you look for in a customer? 
             </label>
             </h6>
             <div class="form-check">
@@ -81,7 +81,7 @@
               <!-- -----------Fårga 3-------------- -->
               <br> 
             <div class="mb-3">
-            <label for="question3" class="form-label">
+            <label for="question3" id="question3" class="form-label">
             <h6>3. What attributes are important when choosing what building to optimize?
             </h6>
             <div class="form-check">
@@ -107,7 +107,7 @@
               <!-- -----------Fårga 4-------------- -->
               <br> 
               <div class="mb-3">
-              <label for="question4" class="form-label">
+              <label for="question4" id="question4" class="form-label">
               <h6>4. Which buildings are the optimal to optimize (tier 1)? 
               </label>
               </h6>
@@ -138,7 +138,7 @@
               <!-- -----------Fårga 5-------------- -->
               <br> 
               <div class="mb-3">
-              <label for="question5" class="form-label">
+              <label for="question5" id="question5" class="form-label">
               <h6>5. You need more investigation before proceeding with a train station
               </label>
               </h6>
@@ -158,7 +158,7 @@
               <!-- -----------Fårga 6-------------- -->
               <br> 
               <div class="mb-3">
-              <label for="question6" class="form-label">
+              <label for="question6" id="question6" class="form-label">
               <h6>6. You need more investigation before proceeding with an office building
 
 
@@ -181,7 +181,7 @@
 
               <br> 
               <div class="mb-3">
-              <label for="question7" class="form-label">
+              <label for="question7" id="question7" class="form-label">
               <h6>7. Which type of building should you avoid?
               </label>
               </h6>
@@ -217,125 +217,10 @@
                 <br>
 
       <button type="button" id="submitAnswers" class="btn btn-primary btn-sm">Submit Answers</button>
-    </form>
     <div id="result"></div>
+    <button type="button" id="showCorrectAnswersButton" class="btn btn-primary btn-sm">Show Correct Answers</button>
+    <div id="correctAnswers"></div>
   </div>
 </div>
-  <script>
-    const correctAnswers = {
-      'question1': ['option1b'], 
-      'question2': ['option2d'],
-      'question3': ['option3c'],
-      'question4': ['option4d'],
-      'question5': ['option5a',],
-      'question6': ['option6b'],
-      'question7': ['option7d']     
-    };
-    const maxChoices = {
-    'question1': 2, 
-    'question2': 2,
-    'question3': 2, 
-    'question4': 3, 
-    'question5': 3, 
-    'question6': 2, 
-    'question7': 4, 
-
-    };  
-
-
-function limitChoices(questionId) {
-      const questionOptions = document.querySelectorAll(`input[name="${questionId}"]`);
-      const checkedOptions = document.querySelectorAll(`input[name="${questionId}"]:checked`);
-      
-      if (checkedOptions.length >= maxChoices[questionId]) {
-        questionOptions.forEach(option => {
-          if (!option.checked) {
-            option.disabled = true; 
-          }
-        });
-      } else {
-        questionOptions.forEach(option => {
-          option.disabled = false; 
-        });
-      }
-    }
-    Object.keys(maxChoices).forEach(questionId => {
-      const questionOptions = document.querySelectorAll(`input[name="${questionId}"]`);
-      
-      questionOptions.forEach(option => {
-        option.addEventListener('click', function() {
-          limitChoices(questionId);
-        });
-      });
-    });
-
-    document.getElementById('submitAnswers').addEventListener('click', function() {
-      let score = 0;
-      
-     // Fråga 1
-     const question1Options = document.querySelectorAll(`input[name="question1"]:checked`);
-     question1Options.forEach(option => {
-    if (correctAnswers['question1'].includes(option.id)) {
-      score++; 
-    }
-  });
-
-  // Fråga 2
-  const question2Options = document.querySelectorAll(`input[name="question2"]:checked`);
-  question2Options.forEach(option => {
-    if (correctAnswers['question2'].includes(option.id)) {
-      score++;
-    }
-  });
-
-    // Fråga 3
-    const question3Options = document.querySelectorAll(`input[name="question3"]:checked`);
-  question3Options.forEach(option => {
-    if (correctAnswers['question3'].includes(option.id)) {
-      score++;
-    }
-  });
-
-    // Fråga 4
-    const question4Options = document.querySelectorAll(`input[name="question4"]:checked`);
-  question4Options.forEach(option => {
-    if (correctAnswers['question4'].includes(option.id)) {
-      score++;
-    }
-  });
-
-    // Fråga 5
-    const question5Options = document.querySelectorAll(`input[name="question5"]:checked`);
-  question5Options.forEach(option => {
-    if (correctAnswers['question5'].includes(option.id)) {
-      score++;
-    }
-  });
-
-    // Fråga 6
-    const question6Options = document.querySelectorAll(`input[name="question6"]:checked`);
-  question6Options.forEach(option => {
-    if (correctAnswers['question6'].includes(option.id)) {
-      score++;
-    }
-  });
-
-    // Fråga 7
-    const question7Options = document.querySelectorAll(`input[name="question7"]:checked`);
-  question7Options.forEach(option => {
-    if (correctAnswers['question7'].includes(option.id)) {
-      score++;
-    }
-  });
-
-  const totalCorrectAnswers = correctAnswers['question1'].length + correctAnswers['question2'].length
-+ correctAnswers['question3'].length + correctAnswers['question4'].length + correctAnswers['question5'].length
-+ correctAnswers['question6'].length + correctAnswers['question7'].length;
-
-      
-      const resultDiv = document.getElementById('result');
-      resultDiv.textContent = `Your score is ${score}/${totalCorrectAnswers}.`;
-    });
-
-</script>
+  <script src="testLogikSchneider.js"></script>
 </body>

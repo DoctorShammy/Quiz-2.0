@@ -180,7 +180,7 @@
               <br> 
               <div class="mb-3">
               <label for="question6" class="form-label">
-              <h6>6. Which type of building should you avoid? (tick three answers)
+              <h6>6. Which type of building should you avoid? (tick two answers)
               </label>
               </h6>
               <div class="form-check">
@@ -248,122 +248,6 @@
     <div id="result"></div>
   </div>
 
-<script>
-    const correctAnswers = {
-      'question1': ['option1b', 'option1c'], 
-      'question2': ['option2b', 'option2d'],
-      'question3': ['option3a', 'option3d'],
-      'question4': ['option4a', 'option4c','option4d'],
-      'question5': ['option5b', 'option5c','option5d'],
-      'question6': ['option6c', 'option6d'],
-      'question7': ['option7a', 'option7b', 'option7c', 'option7d']     
-    };
-    const maxChoices = {
-    'question1': 2, 
-    'question2': 2,
-    'question3': 2, 
-    'question4': 3, 
-    'question5': 3, 
-    'question6': 2, 
-    'question7': 4, 
 
-    };  
-
-
-function limitChoices(questionId) {
-      const questionOptions = document.querySelectorAll(`input[name="${questionId}"]`);
-      const checkedOptions = document.querySelectorAll(`input[name="${questionId}"]:checked`);
-      
-      if (checkedOptions.length >= maxChoices[questionId]) {
-        questionOptions.forEach(option => {
-          if (!option.checked) {
-            option.disabled = true; 
-          }
-        });
-      } else {
-        questionOptions.forEach(option => {
-          option.disabled = false; 
-        });
-      }
-    }
-    Object.keys(maxChoices).forEach(questionId => {
-      const questionOptions = document.querySelectorAll(`input[name="${questionId}"]`);
-      
-      questionOptions.forEach(option => {
-        option.addEventListener('click', function() {
-          limitChoices(questionId);
-        });
-      });
-    });
-
-    document.getElementById('submitAnswers').addEventListener('click', function() {
-      let score = 0;
-      
-     // Fråga 1
-     const question1Options = document.querySelectorAll(`input[name="question1"]:checked`);
-     question1Options.forEach(option => {
-    if (correctAnswers['question1'].includes(option.id)) {
-      score++; 
-    }
-  });
-
-  // Fråga 2
-  const question2Options = document.querySelectorAll(`input[name="question2"]:checked`);
-  question2Options.forEach(option => {
-    if (correctAnswers['question2'].includes(option.id)) {
-      score++;
-    }
-  });
-
-    // Fråga 3
-    const question3Options = document.querySelectorAll(`input[name="question3"]:checked`);
-  question3Options.forEach(option => {
-    if (correctAnswers['question3'].includes(option.id)) {
-      score++;
-    }
-  });
-
-    // Fråga 4
-    const question4Options = document.querySelectorAll(`input[name="question4"]:checked`);
-  question4Options.forEach(option => {
-    if (correctAnswers['question4'].includes(option.id)) {
-      score++;
-    }
-  });
-
-    // Fråga 5
-    const question5Options = document.querySelectorAll(`input[name="question5"]:checked`);
-  question5Options.forEach(option => {
-    if (correctAnswers['question5'].includes(option.id)) {
-      score++;
-    }
-  });
-
-    // Fråga 6
-    const question6Options = document.querySelectorAll(`input[name="question6"]:checked`);
-  question6Options.forEach(option => {
-    if (correctAnswers['question6'].includes(option.id)) {
-      score++;
-    }
-  });
-
-    // Fråga 7
-    const question7Options = document.querySelectorAll(`input[name="question7"]:checked`);
-  question7Options.forEach(option => {
-    if (correctAnswers['question7'].includes(option.id)) {
-      score++;
-    }
-  });
-
-  const totalCorrectAnswers = correctAnswers['question1'].length + correctAnswers['question2'].length
-+ correctAnswers['question3'].length + correctAnswers['question4'].length + correctAnswers['question5'].length
-+ correctAnswers['question6'].length + correctAnswers['question7'].length;
-
-      
-      const resultDiv = document.getElementById('result');
-      resultDiv.textContent = `Your score is ${score}/${totalCorrectAnswers}.`;
-    });
-
-
-  </script>
+<script src="testLogik.js"></script>
 </body>

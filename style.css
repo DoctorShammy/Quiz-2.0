@@ -11,22 +11,22 @@
     color: #333; 
     border-radius: 4px; 
 }
-
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
 .video{
-    max-width: 800px; 
-    margin: auto; 
-    /* padding: 40px;  */
-    text-align: left; 
-    background: #fff; 
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
-    line-height: 1.6;
-    font-family: Georgia, 'Times New Roman', Times, serif; 
-    color: #333; 
-    border-radius: 4px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center; 
 }
 .header{
-    position: center; 
-    
+    text-align: center;
 }
 @media screen and (min-width: 1200px) {
     #content-start {

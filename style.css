@@ -1,6 +1,6 @@
 
 #content-start {
-    max-width: 800px; 
+    max-width: 1000px; 
     margin: auto; 
     padding: 40px;
     text-align: left;
@@ -24,9 +24,12 @@
     color: #333; 
     border-radius: 4px; 
 }
-
+.header{
+    position: center; 
+    
+}
 @media screen and (min-width: 1200px) {
     #content-start {
-        max-width: 800px; 
+        max-width: 1000px; 
     }
 }

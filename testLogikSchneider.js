@@ -1,5 +1,5 @@
 const correctAnswers = {
-    'question1': ['option1b'], 
+    'question1': ['b'], 
     'question2': ['option2d'],
     'question3': ['option3c'],
     'question4': ['option4d'],
@@ -52,24 +52,36 @@ const correctAnswers = {
     resultDiv.textContent = `Your score is ${score}/${totalCorrectAnswers}.`;
   });
 
-  document.getElementById('showCorrectAnswersButton').addEventListener('click', showCorrectAnswers);
+  document.getElementById('submitAnswers').addEventListener('click', function() {
 
-    function showCorrectAnswers() {
-        const correctAnswersDiv = document.getElementById('correctAnswers');
-        let answersHtml='<h2>Correct Answers</h2>';
-        Object.keys(correctAnswers).forEach(questionId => {
-          const correctOptions = correctAnswers[questionId];
-          const questionElement = document.getElementById(questionId);
-      
-          if (questionElement) {
-            answersHtml += `<p><strong>${questionElement.textContent}</strong>: ${correctOptions.join(', ')}</p>`;
-        }
+    document.getElementById('showCorrectAnswersButton').style.display = 'block';
+});
+
+document.getElementById('showCorrectAnswersButton').addEventListener('click', showCorrectAnswers);
+
+function showCorrectAnswers() {
+    const correctAnswersDiv = document.getElementById('correctAnswers');
+    let answersHtml = '<h2>Correct Answers</h2>';
+    Object.keys(correctAnswers).forEach(questionId => {
+        const correctOptions = correctAnswers[questionId];
+        let questionOptionsText = '';
+
+        correctOptions.forEach(option => {
+            const optionElement = document.getElementById(option);
+            console.log('Option Element:', optionElement);
+            if (optionElement) {
+              console.log('Label:', optionElement.labels[0].textContent);
+                questionOptionsText += `${optionElement.labels[0].textContent.trim()[0]}, `;
+            }
         });
-        correctAnswersDiv.innerHTML = answersHtml;
 
-        //ändra så att man får fram a) b) c) d) istället för hela texten
+        if (questionOptionsText) {
+            answersHtml += `<p><strong>Question ${questionId.charAt(questionId.length - 1)}</strong>: ${questionOptionsText.slice(0, -2)}</p>`;
+        }
+    });
+    correctAnswersDiv.innerHTML = answersHtml;
+}
 
-      }
       
  
 

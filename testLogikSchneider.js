@@ -5,7 +5,9 @@ const correctAnswers = {
     'question4': ['option4d'],
     'question5': ['option5a',],
     'question6': ['option6b'],
-    'question7': ['option7d']     
+    'question7': ['option7d'],     
+    'question8': ['option8b'],     
+    'question9': ['option9a']     
   };
   const maxChoices = {
   'question1': 1, 
@@ -15,6 +17,8 @@ const correctAnswers = {
   'question5': 1, 
   'question6': 1, 
   'question7': 1, 
+  'question8': 1, 
+  'question9': 1
 
   };  
 

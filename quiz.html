@@ -7,14 +7,6 @@
     <!-- Inkludera CSS och andra relevanta resurser här -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./Style/flatly.css">
-    <style>
-        .correct-answer {
-            background-color: lightgreen; /* Change the color if needed */
-            /* You can add more styling properties here */
-        }
-        </style>
-        
-    
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -33,8 +25,9 @@
             </ul>
         </div>
     </nav>
+
     <div class="container mt-5">
-        <h1>Quiz</h1>
+        <h1>Quiz for Schneider Electric</h1>
         <div id="quizContainer">
             <!-- Quiz-frågor kommer att genereras och läggas till här dynamiskt -->
         </div>
@@ -44,6 +37,7 @@
         <button id="showCorrectAnswersButton" class="btn btn-info mt-2" style="display: none;">Show Correct Answers</button>
     </div>
 
+    <!-- Inkludera dina JavaScript-filer här -->
     <script src="./ConfigData/questionsT1.js"></script>
     <script src="quizGenerator.js"></script>
     <script src="quizLogic.js"></script>

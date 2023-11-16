@@ -18,6 +18,11 @@
     flex-direction: column;
     text-align: center;
 }
+.logo{
+    width: 110px;
+    height: 110px;
+    margin-left: 10px;
+}
 .video{
     display: flex;
     justify-content: center;
@@ -30,6 +35,15 @@
 }
 .header{
     text-align: center;
+}
+.correct-answer {
+    color: rgb(5, 148, 5);
+}
+.container {
+border: 3px solid #545454; 
+box-shadow: 6px 6px 10px rgba(33, 33, 33, 0.5); 
+padding: 20px;
+margin: 20px; 
 }
 @media screen and (min-width: 1200px) {
     #content-start {

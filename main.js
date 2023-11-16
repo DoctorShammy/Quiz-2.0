@@ -1,77 +1,40 @@
-// // document.addEventListener('DOMContentLoaded', () => {
-// //     generateQuiz();
-// //     // Eventuella andra initialiseringar
-// // });
+ function limitChoices(questionId) {
+    const questionOptions = document.querySelectorAll(`input[name="${questionId}"]`);
+    const checkedOptions = document.querySelectorAll(`input[name="${questionId}"]:checked`);
+
+    const question = quizQuestions.find(q => q.id === questionId);
+    const maxChoicesForQuestion = question ? question.maxChoices : 0;
+
+    const disableUnchecked = checkedOptions.length >= maxChoicesForQuestion;
+    questionOptions.forEach(option => option.disabled = !option.checked && disableUnchecked);
+}
 
 
+ function calculateScore() {
+    let score = 0;
+    let totalCorrectAnswers = 0;
 
+    Object.keys(correctAnswers).forEach(questionId => {
+        const checkedOptions = Array.from(document.querySelectorAll(`input[name="${questionId}"]:checked`));
+        checkedOptions.forEach(option => {
+            if (correctAnswers[questionId].includes(option.id)) {
+                score++;
+            }
+        });
+        totalCorrectAnswers += correctAnswers[questionId].length;
+    });
+    return { score, totalCorrectAnswers };
 
-// // document.addEventListener('DOMContentLoaded', createQuiz);
-// // // This event listener will be triggered when the DOM is fully loaded.
-// // document.addEventListener('DOMContentLoaded', () => {
-// //     // Call createQuiz from wherever it's defined
-// //     createQuiz();
-
-// //     // Set up the event listener for the submit button
-// //     const submitBtn = document.getElementById('submitAnswers');
-// //     if (submitBtn) {
-// //         submitBtn.addEventListener('click', submitQuiz);
-// //     }
-// // });
-
-// // // This function is responsible for handling the quiz submission.
-// // function submitQuiz() {
-// //     let score = 0; // Initialize score
-// //     quizQuestions.forEach(question => {
-// //         const selectedOptions = document.querySelectorAll(`input[name="${question.id}"]:checked`);
-// //         const selectedAnswers = Array.from(selectedOptions).map(option => option.id);
-
-// //         // Check if all selected answers are correct
-// //         if (question.correctAnswer.every(answer => selectedAnswers.includes(answer)) && selectedAnswers.every(answer => question.correctAnswer.includes(answer))) {
-// //             score += 1; // Each fully correct answer increases the score
-// //         }
-// //     });
-
-// //     // Display the score
-// //     const resultDiv = document.getElementById('result');
-// //     if (resultDiv) {
-// //         resultDiv.textContent = `Your total score is: ${score} out of ${quizQuestions.length}`;
-// //     }
-// // }
-// // main.js
-// document.addEventListener('DOMContentLoaded', () => {
-//     // Call createQuiz from wherever it's defined
-//     createQuiz();
-
-//     // Set up the event listener for the submit button
-//     const submitBtn = document.getElementById('submitAnswers');
-//     if (submitBtn) {
-//         submitBtn.addEventListener('click', submitQuiz);
-//     }
-// });
-
-// // This function is responsible for handling the quiz submission.
-// function submitQuiz() {
-//     let score = 0; // Initialize score
-//     quizQuestions.forEach(question => {
-//         const selectedOptions = document.querySelectorAll(`input[name="${question.id}"]:checked`);
-//         const selectedAnswers = Array.from(selectedOptions).map(option => option.id);
-
-//         // Check if all selected answers are correct
-//         if (question.correctAnswer.every(answer => selectedAnswers.includes(answer)) && selectedAnswers.every(answer => question.correctAnswer.includes(answer))) {
-//             score += 1; // Each fully correct answer increases the score
-//         }
-//     });
-
-//     // Display the score
-//     const resultDiv = document.getElementById('result');
-//     if (resultDiv) {
-//         resultDiv.textContent = `Your total score is: ${score} out of ${quizQuestions.length}`;
-//     }
-// }
+}
 document.addEventListener('DOMContentLoaded', () => {
     createQuiz();
 
+ quizQuestions.forEach(question => {
+    const questionOptions = document.querySelectorAll(`input[name="${question.id}"]`);
+    questionOptions.forEach(option => {
+        option.addEventListener('click', () => limitChoices(question.id));
+    });
+});
     
     const submitBtn = document.getElementById('submitAnswers');
     if (submitBtn) {
@@ -84,43 +47,56 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+
 function submitQuiz() {
-    let score = 0; 
+    let score = 0;     
+    let totalPossibleScore = 0;
+
     quizQuestions.forEach(question => {
+        totalPossibleScore += question.correctAnswer.length;
+
         const selectedOptions = document.querySelectorAll(`input[name="${question.id}"]:checked`);
         const selectedAnswers = Array.from(selectedOptions).map(option => option.id);
-
-        if (question.correctAnswer.every(answer => selectedAnswers.includes(answer)) &&
-            selectedAnswers.every(answer => question.correctAnswer.includes(answer))) {
-            score += 1; 
-        }
+       
+        selectedAnswers.forEach(answer => {
+            if (question.correctAnswer.includes(answer)) {
+                score += 1;
+      
+            }
+        });
     });
 
     const resultDiv = document.getElementById('result');
     if (resultDiv) {
-        resultDiv.textContent = `Your total score is: ${score} out of ${quizQuestions.length}`;
+        resultDiv.textContent = `Your total score is: ${score} out of ${totalPossibleScore}`;
+        resultDiv.scrollIntoView({ behavior: 'smooth' });
     }
 
     const showAnswersBtn = document.getElementById('showCorrectAnswersButton');
     if (showAnswersBtn) {
         showAnswersBtn.style.display = 'block'; 
+        resultDiv.scrollIntoView({ behavior: 'smooth' });
+
     }
 }
 
 
 function highlightCorrectAnswers() {
-    // Reset any previous highlighting
     document.querySelectorAll('.correct-answer').forEach(element => {
         element.classList.remove('correct-answer');
     });
 
     quizQuestions.forEach(question => {
-        // Highlight all correct answers
-        question.correctAnswer.forEach(answer => {
-            const correctOption = document.getElementById(answer);
-            if (correctOption && correctOption.nextSibling && correctOption.nextSibling.tagName === 'LABEL') {
-                correctOption.nextSibling.classList.add('correct-answer'); // Add class to highlight
+        question.correctAnswer.forEach(answerId => {
+            const correctOption = document.getElementById(answerId);
+            if (correctOption) {
+                const associatedLabels = correctOption.labels;
+                if (associatedLabels && associatedLabels.length > 0) {
+                    associatedLabels[0].classList.add('correct-answer');
+                }
             }
         });
     });
+
+
 }

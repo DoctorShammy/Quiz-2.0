@@ -44,6 +44,3 @@ function createQuiz() {
   });
 }
 
-// Call the function when the page loads
-// document.addEventListener('DOMContentLoaded', createQuiz);
-  
